@@ -1,0 +1,117 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2E2E2E;  /* Dark gray background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    color: white;  /* Adjust text color */
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;  /* Adjust text color */
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;  /* Adjust text color */
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;  /* Adjust text color */
+}
+
+header {
+    background-color: #441112;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background-color: rgba(29, 30, 32, 0.69);
+}
+
+.collections, .hero {
+    background-color: rgba(29, 30, 32, 0.84);
+    color: white;
+    padding: 20px 20px 20px 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.collections {
+    background-image: url('text-box.png');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(30, 30, 30, 0.5);
+    background-blend-mode: overlay;
+}
+
+.collection_2 {
+    background-image: url('football-turf.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(30, 30, 30, 0.5);
+    background-blend-mode: overlay;
+}
+
+.hero {
+    color: white;
+    text-align: center;
+    background-image: url('tools.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(30, 30, 30, 0.5);
+    background-blend-mode: overlay;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.projects {
+    background-color: rgb(255, 255, 255);
+}
+
+footer {
+    background-color: rgba(29, 30, 32, 0.84);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.container, .content {
+    padding: 20px;
+}
+
+ul {
+    padding: 10px 20px;
+    color: white;  /* Adjust text color */
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
