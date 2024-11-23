@@ -11,6 +11,22 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
     <style>
+        .hero {
+            text-align: center;
+            padding: 20px;
+        }
+        .hero a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+            background-color: #ccc;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .hero a:hover {
+            background-color: #999;
+        }
         .product {
             display: flex;
             flex-direction: column;
@@ -48,7 +64,7 @@
     <h1>Tomblin Hardware</h1>
     <h4>11487 Appalachian Highway | Oceana, WV 24870 | (304) 682-4665</h4>
     <a href="about.html">About</a>
-    <a href="shop.php">Shop</a>
+    <a href="index1.php">Home</a>
 </section>
 <div class="container">
     <h2>Shop Our Products</h2>
