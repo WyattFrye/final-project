@@ -1,5 +1,6 @@
 <?php
-// login.php - Login page for Tomblin Hardware
+// auth.php
+// login.php - Login page
 session_start();
 require_once 'config.php';
 require_once 'auth.php';
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
 
         if (login_user($pdo, $username, $password)) {
-            header('Location: index.php');
+            header('Location: index1.php');
             exit;
         } else {
             $error_message = 'Invalid username or password';
@@ -29,6 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<section class="hero">
+    <h1>Tomblin Hardware</h1>
+    <h4>11487 Appalachian Highway | Oceana, WV 24870 | (304) 682-4665</h4>
+</section>
+<body_2>
 <div class="auth-container">
     <h1>Login</h1>
     <?php if ($error_message): ?>
@@ -48,6 +54,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
     <p>Don't have an account? <a href="register.php">Register here</a></p>
 </div>
-</body>
+</body_2>
 </html>
-
