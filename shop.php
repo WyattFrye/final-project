@@ -1,5 +1,12 @@
 <?php
+session_start();
+require_once 'auth.php';
 
+// Check if user is logged in
+if (!is_logged_in()) {
+    header('Location: login.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +90,12 @@
             echo "<img src='" . $product["img"] . "' alt='" . $product["title"] . "'>";
             echo "<h3>" . $product["title"] . "</h3>";
             echo "<p>" . $product["description"] . "</p>";
-            echo "<button>Add to Cart</button>";
+            echo "<form method='post' action='cart.php'>";
+            echo "<input type='hidden' name='product_title' value='" . $product["title"] . "'>";
+            echo "<input type='hidden' name='product_description' value='" . $product["description"] . "'>";
+            echo "<input type='hidden' name='product_img' value='" . $product["img"] . "'>";
+            echo "<button type='submit'>Add to Cart</button>";
+            echo "</form>";
             echo "</div>";
         }
         ?>
