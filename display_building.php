@@ -15,14 +15,31 @@ $buildingMaterials = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building Materials Inventory</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <style>
+        .hero {
+            text-align: center;
+            padding: 20px;
+        }
+        .hero a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+            background-color: #ccc;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .hero a:hover {
+            background-color: #999;
+        }
+    </style>
 </head>
 <body>
 <section class="hero">
     <h1>Building Materials Inventory</h1>
     <a href="about.html">About</a>
     <a href="index1.php">Home</a>
-    <a href="view_cart.php">View Cart</a> <!-- Added View Cart button -->
+    <a href="view_cart.php">View Cart</a>
 </section>
 <div class="container">
     <h2>Our Building Materials</h2>

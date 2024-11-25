@@ -74,6 +74,7 @@ if (!is_logged_in()) {
     <h4>11487 Appalachian Highway | Oceana, WV 24870 | (304) 682-4665</h4>
     <a href="about.html">About</a>
     <a href="index1.php">Home</a>
+    <a href="view_cart.php">View Cart</a> <!-- Added View Cart button -->
 </section>
 <div class="container">
     <h2>Shop Our Products</h2>
