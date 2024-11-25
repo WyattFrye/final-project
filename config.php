@@ -99,9 +99,9 @@ try {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-// Database configuration for BuildingSupplies
+// Database configuration for BuildingMaterials
 $host5 = 'localhost';
-$dbname5 = 'BuildingMaterials';
+$dbname5 = 'buildingmaterials';
 $user5 = 'fryew06';
 $pass5 = '8973';
 $charset5 = 'utf8mb4';

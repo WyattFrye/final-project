@@ -3,7 +3,7 @@ global $pdoBuilding;
 require_once 'config.php'; // Include the database connection
 
 // Fetch items from the BuildingMaterials table in the buildingmaterials database
-$sql = "SELECT * FROM BuildingMaterials";
+$sql = "SELECT * FROM Materials";
 $stmt = $pdoBuilding->prepare($sql);
 $stmt->execute();
 $buildingMaterials = $stmt->fetchAll();
