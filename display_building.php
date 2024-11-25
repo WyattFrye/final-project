@@ -1,5 +1,5 @@
 <?php
-global $pdoBuilding, $pdoShopping;
+global $pdoBuilding;
 require_once 'config.php'; // Include the database connection
 
 // Fetch items from the Materials table in the buildingmaterials database
@@ -22,6 +22,7 @@ $buildingMaterials = $stmt->fetchAll();
     <h1>Building Materials Inventory</h1>
     <a href="about.html">About</a>
     <a href="index1.php">Home</a>
+    <a href="view_cart.php">View Cart</a> <!-- Added View Cart button -->
 </section>
 <div class="container">
     <h2>Our Building Materials</h2>

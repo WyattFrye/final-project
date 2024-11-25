@@ -22,6 +22,7 @@ $tools = $stmt->fetchAll();
     <h1>Tools Inventory</h1>
     <a href="about.html">About</a>
     <a href="index1.php">Home</a>
+    <a href="view_cart.php">View Cart</a> <!-- Added View Cart button -->
 </section>
 <div class="container">
     <h2>Our Tools</h2>
