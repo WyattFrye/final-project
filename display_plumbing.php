@@ -1,8 +1,8 @@
 <?php
 global $pdoPlumbing;
-require_once 'config.php';
+require_once 'config.php'; // Include the database connection
 
-// Fetch items from the PlumbingMaterials table in the PlumbingSupplies database
+// Fetch items from the PlumbingMaterials table in the plumbingsupplies database
 $sql = "SELECT * FROM PlumbingMaterials";
 $stmt = $pdoPlumbing->prepare($sql);
 $stmt->execute();
@@ -30,6 +30,13 @@ $plumbingMaterials = $stmt->fetchAll();
             <div class="product">
                 <h3><?php echo htmlspecialchars($material['name']); ?></h3>
                 <p>Price: $<?php echo number_format($material['price'], 2); ?></p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($material['name']); ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $material['price']; ?>">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" min="1" value="1" required>
+                    <button type="submit">Add to Cart</button>
+                </form>
             </div>
         <?php endforeach; ?>
     </div>

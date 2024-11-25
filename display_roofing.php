@@ -1,8 +1,8 @@
 <?php
 global $pdoRoofing;
-require_once 'config.php';
+require_once 'config.php'; // Include the database connection
 
-// Fetch items from the RoofingMaterials table in the RoofingSupplies database
+// Fetch items from the RoofingMaterials table in the roofingsupplies database
 $sql = "SELECT * FROM RoofingMaterials";
 $stmt = $pdoRoofing->prepare($sql);
 $stmt->execute();
@@ -30,6 +30,13 @@ $roofingMaterials = $stmt->fetchAll();
             <div class="product">
                 <h3><?php echo htmlspecialchars($material['name']); ?></h3>
                 <p>Price: $<?php echo number_format($material['price'], 2); ?></p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($material['name']); ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $material['price']; ?>">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" min="1" value="1" required>
+                    <button type="submit">Add to Cart</button>
+                </form>
             </div>
         <?php endforeach; ?>
     </div>
@@ -39,4 +46,3 @@ $roofingMaterials = $stmt->fetchAll();
 </footer>
 </body>
 </html>
-

@@ -1,8 +1,8 @@
 <?php
 global $pdoFlooring;
-require_once 'config.php';
+require_once 'config.php'; // Include the database connection
 
-// Fetch items from the Flooring table in the FlooringMaterials database
+// Fetch items from the Flooring table in the flooringmaterials database
 $sql = "SELECT * FROM Flooring";
 $stmt = $pdoFlooring->prepare($sql);
 $stmt->execute();
@@ -24,12 +24,19 @@ $flooringMaterials = $stmt->fetchAll();
     <a href="index1.php">Home</a>
 </section>
 <div class="container">
-    <h2>Our Flooring Materials (By Square Foot)</h2>
+    <h2>Our Flooring Materials</h2>
     <div class="product-list">
         <?php foreach ($flooringMaterials as $material): ?>
             <div class="product">
                 <h3><?php echo htmlspecialchars($material['name']); ?></h3>
                 <p>Price: $<?php echo number_format($material['price'], 2); ?></p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($material['name']); ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $material['price']; ?>">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" min="1" value="1" required>
+                    <button type="submit">Add to Cart</button>
+                </form>
             </div>
         <?php endforeach; ?>
     </div>
@@ -39,4 +46,3 @@ $flooringMaterials = $stmt->fetchAll();
 </footer>
 </body>
 </html>
-
