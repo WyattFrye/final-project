@@ -80,11 +80,11 @@ if (!is_logged_in()) {
     <div class="product-list">
         <?php
         $products = [
-            ["img" => "building_materials.jpg", "title" => "Building Materials", "description" => "High-quality lumber, cement, and other construction materials."],
-            ["img" => "roofing_supplies.jpg", "title" => "Roofing Supplies", "description" => "Durable and weather-resistant roofing options."],
-            ["img" => "flooring.jpg", "title" => "Flooring", "description" => "A variety of flooring solutions including tiles, wood, and laminates."],
-            ["img" => "plumbing_supplies.jpg", "title" => "Plumbing Supplies", "description" => "Pipes, fittings, and other essential plumbing items."],
-            ["img" => "tools.jpg", "title" => "Tools and Hardware", "description" => "Everything from hand tools to power tools to get the job done."]
+            ["img" => "building_materials.jpg", "title" => "Building Materials", "description" => "High-quality lumber, cement, and other construction materials.", "link" => "display_building.php"],
+            ["img" => "roofing_supplies.jpg", "title" => "Roofing Supplies", "description" => "Durable and weather-resistant roofing options.", "link" => "display_roofing.php"],
+            ["img" => "flooring.jpg", "title" => "Flooring", "description" => "A variety of flooring solutions including tiles, wood, and laminates.", "link" => "display_flooring.php"],
+            ["img" => "plumbing_supplies.jpg", "title" => "Plumbing Supplies", "description" => "Pipes, fittings, and other essential plumbing items.", "link" => "display_plumbing.php"],
+            ["img" => "tools.jpg", "title" => "Tools and Hardware", "description" => "Everything from hand tools to power tools to get the job done.", "link" => "display_tools.php"]
         ];
 
         foreach ($products as $product) {
@@ -92,16 +92,7 @@ if (!is_logged_in()) {
             echo "<img src='" . $product["img"] . "' alt='" . $product["title"] . "'>";
             echo "<h3>" . $product["title"] . "</h3>";
             echo "<p>" . $product["description"] . "</p>";
-            if ($product["title"] === "Tools and Hardware") {
-                echo "<a href='display_tools.php'>View Details</a>";
-            } else {
-                echo "<form method='post' action='cart.php'>";
-                echo "<input type='hidden' name='product_title' value='" . $product["title"] . "'>";
-                echo "<input type='hidden' name='product_description' value='" . $product["description"] . "'>";
-                echo "<input type='hidden' name='product_img' value='" . $product["img"] . "'>";
-                echo "<button type='submit'>Add to Cart</button>";
-                echo "</form>";
-            }
+            echo "<a href='" . $product["link"] . "'>View Details</a>";
             echo "</div>";
         }
         ?>

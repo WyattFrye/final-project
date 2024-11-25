@@ -1,8 +1,8 @@
 <?php
-global $pdoBuilding;
+global $pdoBuilding, $pdoShopping;
 require_once 'config.php'; // Include the database connection
 
-// Fetch items from the BuildingMaterials table in the buildingmaterials database
+// Fetch items from the Materials table in the buildingmaterials database
 $sql = "SELECT * FROM Materials";
 $stmt = $pdoBuilding->prepare($sql);
 $stmt->execute();
@@ -30,6 +30,13 @@ $buildingMaterials = $stmt->fetchAll();
             <div class="product">
                 <h3><?php echo htmlspecialchars($material['name']); ?></h3>
                 <p>Price: $<?php echo number_format($material['price'], 2); ?></p>
+                <form method="post" action="cart.php">
+                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($material['name']); ?>">
+                    <input type="hidden" name="product_price" value="<?php echo $material['price']; ?>">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" min="1" value="1" required>
+                    <button type="submit">Add to Cart</button>
+                </form>
             </div>
         <?php endforeach; ?>
     </div>

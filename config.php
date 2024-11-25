@@ -119,6 +119,26 @@ try {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+// Database configuration for Shopping
+$host6 = 'localhost';
+$dbname6 = 'shopping';
+$user6 = 'fryew06';
+$pass6 = '8973';
+$charset6 = 'utf8mb4';
+
+$dsn6 = "mysql:host=$host6;dbname=$dbname6;charset=$charset6";
+$options6 = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+try {
+    $pdoShopping = new PDO($dsn6, $user6, $pass6, $options6);
+} catch (PDOException $e) {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+}
+
 // Create users table if it doesn't exist
 $sql = "CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
