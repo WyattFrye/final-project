@@ -14,7 +14,7 @@ $options = [
 ];
 
 try {
-    $pdoBooks = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
@@ -32,11 +32,6 @@ $options1 = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-    throw new PDOException($e->getMessage(), (int)$e->getCode());
-}
 
 try {
     $pdoTools = new PDO($dsn1, $user1, $pass1, $options1);
@@ -104,3 +99,32 @@ try {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+// Database configuration for BuildingSupplies
+$host5 = 'localhost';
+$dbname5 = 'BuildingMaterials';
+$user5 = 'fryew06';
+$pass5 = '8973';
+$charset5 = 'utf8mb4';
+
+$dsn5 = "mysql:host=$host5;dbname=$dbname5;charset=$charset5";
+$options5 = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+try {
+    $pdoBuilding = new PDO($dsn5, $user5, $pass5, $options5);
+} catch (PDOException $e) {
+    throw new PDOException($e->getMessage(), (int)$e->getCode());
+}
+
+// Create users table if it doesn't exist
+$sql = "CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
+$pdo->exec($sql);
+?>
