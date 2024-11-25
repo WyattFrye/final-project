@@ -52,16 +52,18 @@ if (!is_logged_in()) {
         .product p {
             margin-bottom: 10px;
         }
-        .product button {
+        .product button, .product a {
             background-color: #441112;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            text-align: center;
+            text-decoration: none;
             transition: background-color 0.3s ease;
         }
-        .product button:hover {
+        .product button:hover, .product a:hover {
             background-color: #3b0e0e;
         }
     </style>
@@ -90,12 +92,16 @@ if (!is_logged_in()) {
             echo "<img src='" . $product["img"] . "' alt='" . $product["title"] . "'>";
             echo "<h3>" . $product["title"] . "</h3>";
             echo "<p>" . $product["description"] . "</p>";
-            echo "<form method='post' action='cart.php'>";
-            echo "<input type='hidden' name='product_title' value='" . $product["title"] . "'>";
-            echo "<input type='hidden' name='product_description' value='" . $product["description"] . "'>";
-            echo "<input type='hidden' name='product_img' value='" . $product["img"] . "'>";
-            echo "<button type='submit'>Add to Cart</button>";
-            echo "</form>";
+            if ($product["title"] === "Tools and Hardware") {
+                echo "<a href='display_tools.php'>View Details</a>";
+            } else {
+                echo "<form method='post' action='cart.php'>";
+                echo "<input type='hidden' name='product_title' value='" . $product["title"] . "'>";
+                echo "<input type='hidden' name='product_description' value='" . $product["description"] . "'>";
+                echo "<input type='hidden' name='product_img' value='" . $product["img"] . "'>";
+                echo "<button type='submit'>Add to Cart</button>";
+                echo "</form>";
+            }
             echo "</div>";
         }
         ?>
@@ -106,4 +112,3 @@ if (!is_logged_in()) {
 </footer>
 </body>
 </html>
-
