@@ -99,6 +99,7 @@ try {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 
+
 // Database configuration for BuildingMaterials
 $host5 = 'localhost';
 $dbname5 = 'buildingmaterials';
@@ -138,6 +139,7 @@ try {
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
+
 
 // Create users table if it doesn't exist
 $sql = "CREATE TABLE IF NOT EXISTS users (

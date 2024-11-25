@@ -1,64 +1,30 @@
 <?php
 session_start();
+require_once 'config.php'; // Include the database connection
 
-// Initialize the cart if it doesn't exist
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = [];
-}
-
-// Handle adding items to the cart
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $product_title = $_POST['product_title'];
-    $product_description = $_POST['product_description'];
-    $product_img = $_POST['product_img'];
+    // Ensure user is logged in and user_id is stored in the session
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: login.php');
+        exit;
+    }
 
-    // Add product to cart
-    $_SESSION['cart'][] = [
-        'title' => $product_title,
-        'description' => $product_description,
-        'img' => $product_img
-    ];
+    $user_id = $_SESSION['user_id'];
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $quantity = $_POST['quantity'];
 
-    // Redirect back to the shop page
-    header('Location: shop.php');
+    $sql = "INSERT INTO CartItems (user_id, product_name, product_price, quantity) VALUES (:user_id, :product_name, :product_price, :quantity)";
+    $stmt = $pdoShopping->prepare($sql);
+    $stmt->execute([
+        ':user_id' => $user_id,
+        ':product_name' => $product_name,
+        ':product_price' => $product_price,
+        ':quantity' => $quantity
+    ]);
+
+    // Redirect to a cart overview page (optional)
+    header('Location: view_cart.php');
     exit;
 }
-
-// Handle displaying the cart
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<section class="hero">
-    <h1>Your Cart</h1>
-    <a href="shop.php">Continue Shopping</a>
-</section>
-<div class="container">
-    <h2>Cart Contents</h2>
-    <?php if (!empty($_SESSION['cart'])): ?>
-        <ul>
-            <?php foreach ($_SESSION['cart'] as $item): ?>
-                <li>
-                    <img src="<?php echo htmlspecialchars($item['img']); ?>" alt="<?php echo htmlspecialchars($item['title']); ?>" style="width: 100px; height: auto;">
-                    <strong><?php echo htmlspecialchars($item['title']); ?></strong><br>
-                    <?php echo htmlspecialchars($item['description']); ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    <?php else: ?>
-        <p>Your cart is empty.</p>
-    <?php endif; ?>
-</div>
-<footer>
-    <p>Tomblin Hardware &copy; 2024</p>
-</footer>
-</body>
-</html>
-
