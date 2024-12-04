@@ -6,9 +6,16 @@
   <title>About Tomblin Hardware</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 200vh; /* Make the body taller to enable scrolling */
+    }
+
     .hero {
       text-align: center;
       padding: 20px;
+      background-color: #333;
     }
     .hero a {
       margin: 0 10px;
@@ -22,6 +29,35 @@
     .hero a:hover {
       background-color: #999;
     }
+
+    .about-me {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      color: white;
+      background: url('dark-workers.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    .about-me-content {
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      transition: top 0.5s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -31,19 +67,28 @@
 </section>
 <main>
   <section class="about-me">
-    <p style="color:white;">
-      At Tomblin Hardware, we are passionate about providing top-quality building materials and supplies to our community. Our journey began as a small, family-owned business in Oceana, West Virginia, with a mission to meet the needs of our local builders and DIY enthusiasts.
-    </p>
-    <p style="color:white;">
-      Over the years, we’ve expanded our inventory to include a wide range of products, from roofing supplies and flooring to plumbing items and tools. Despite our growth, we’ve stayed true to our roots, maintaining a commitment to exceptional customer service and community support.
-    </p>
-    <p style="color:white;">
-      Whether you’re working on a major construction project or a simple home repair, Tomblin Hardware has everything you need to get the job done right. Our knowledgeable staff is here to help with expert advice and friendly service. Visit us today and see why Tomblin Hardware is the trusted choice for so many in the Oceana area.
-    </p>
+    <div class="about-me-content">
+      <p>
+        At Tomblin Hardware, we are passionate about providing top-quality building materials and supplies to our community. Our journey began as a small, family-owned business in Oceana, West Virginia, with a mission to meet the needs of our local builders and DIY enthusiasts.
+      </p>
+      <p>
+        Over the years, we’ve expanded our inventory to include a wide range of products, from roofing supplies and flooring to plumbing items and tools. Despite our growth, we’ve stayed true to our roots, maintaining a commitment to exceptional customer service and community support.
+      </p>
+      <p>
+        Whether you’re working on a major construction project or a simple home repair, Tomblin Hardware has everything you need to get the job done right. Our knowledgeable staff is here to help with expert advice and friendly service. Visit us today and see why Tomblin Hardware is the trusted choice for so many in the Oceana area.
+      </p>
+    </div>
   </section>
 </main>
 <footer>
   <p>© 2024 Tomblin Hardware</p>
 </footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const content = document.querySelector('.about-me-content');
+    content.style.top = `${100 - scrollPosition / 10}%`; // Adjust this value to control the reveal speed
+  });
+</script>
 </body>
 </html>
