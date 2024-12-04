@@ -37,6 +37,20 @@
       position: relative;
       z-index: 10;
     }
+    .home-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #ccc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .home-button:hover {
+      background-color: #999;
+    }
     .title {
       font-size: 4em;
       color: white;
@@ -74,7 +88,7 @@
       height: 100%;
       overflow: hidden;
       color: white;
-      background: url('dark-workers.jpg') no-repeat center center;
+      background: url('consruction.jpg') no-repeat center center;
       background-size: cover;
       z-index: 1;
     }
@@ -103,6 +117,7 @@
 <body>
 <div class="header">
   <img src="BaW-logo.png" alt="Tomblin Hardware Logo">
+  <a href="index1.php" class="home-button">Home</a>
 </div>
 <img src="About-Tomblin.png" alt="Description of the image" class="image-below-header">
 <main>
