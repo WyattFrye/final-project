@@ -15,6 +15,12 @@ $sql = "SELECT * FROM CartItems WHERE user_id = :user_id";
 $stmt = $pdoShopping->prepare($sql);
 $stmt->execute([':user_id' => $user_id]);
 $cartItems = $stmt->fetchAll();
+
+// Calculate total
+$total = 0;
+foreach ($cartItems as $item) {
+    $total += $item['product_price'] * $item['quantity'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +59,8 @@ $cartItems = $stmt->fetchAll();
             })
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('cart').innerHTML = data;
+                    // Reload the page to refresh the total price
+                    location.reload();
                 })
                 .catch(error => console.error('Error:', error));
         }
@@ -78,6 +85,7 @@ $cartItems = $stmt->fetchAll();
                     </li>
                 <?php endforeach; ?>
             </ul>
+            <h3>Total: $<?php echo number_format($total, 2); ?></h3>
         <?php else: ?>
             <p>Your cart is empty.</p>
         <?php endif; ?>
