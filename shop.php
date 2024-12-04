@@ -18,6 +18,25 @@ if (!is_logged_in()) {
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
     <style>
+        .header {
+            text-align: center;
+            background-color: #393939;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .header img {
+            max-width: 35%;
+            height: auto;
+        }
+        .header {
+            font-size: 2em;
+            color: white;
+            background-color: rgb(57, 57, 57);
+            margin-top: 10px;
+            padding: 10px;
+            text-align: center;
+        }
         .hero {
             text-align: center;
             padding: 20px;
@@ -69,12 +88,14 @@ if (!is_logged_in()) {
     </style>
 </head>
 <body>
+<div class="header">
+    <img src="BaW-logo.png" alt="Tomblin Hardware Logo">
+</div>
 <section class="hero">
-    <h1>Tomblin Hardware</h1>
     <h4>11487 Appalachian Highway | Oceana, WV 24870 | (304) 682-4665</h4>
     <a href="about.html">About</a>
     <a href="index1.php">Home</a>
-    <a href="view_cart.php">View Cart</a> <!-- Added View Cart button -->
+    <a href="view_cart.php">View Cart</a>
 </section>
 <div class="container">
     <h2>Shop Our Products</h2>

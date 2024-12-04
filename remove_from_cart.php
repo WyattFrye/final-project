@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php'; // Include the database connection
+require_once 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cart_item_id = $_POST['cart_item_id'];
