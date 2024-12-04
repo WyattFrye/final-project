@@ -9,7 +9,7 @@
     body, html {
       margin: 0;
       padding: 0;
-      height: 200vh;
+      height: 150vh;
     }
 
     .header {
@@ -26,19 +26,25 @@
     .header {
       font-size: 2em;
       color: white;
-      background-color: rgb(57, 57, 57); /* Semi-transparent background */
+      background-color: rgb(57, 57, 57);
       margin-top: 10px;
       padding: 10px;
       text-align: center;
     }
+    .image-below-header {
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 10;
+    }
     .title {
       font-size: 4em;
       color: white;
-      background-color: transparent; /* Fully transparent background */
+      background-color: transparent;
       padding: 10px;
       text-align: center;
-      z-index: 10;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      margin-bottom: 20px;
     }
 
     .hero {
@@ -98,20 +104,11 @@
 <div class="header">
   <img src="BaW-logo.png" alt="Tomblin Hardware Logo">
 </div>
-<section class="hero">
-  <h1>About Tomblin Hardware</h1>
-  <a href="index1.php">Home</a>
-</section>
+<img src="About-Tomblin.png" alt="Description of the image" class="image-below-header">
 <main>
-  <section class="title">
-    <div class="about-me">
-      <h1>About Us</h1>
-      </div>
-    </div>
-
+  <div class="title">
     Who is Tomblin Hardware
-  </section>
-
+  </div>
   <section class="about-me">
     <div class="about-me-content">
       <p>
