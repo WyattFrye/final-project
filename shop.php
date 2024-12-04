@@ -85,7 +85,7 @@ if (!is_logged_in()) {
             ["img" => "roofing_supplies.jpg", "title" => "Roofing Supplies", "description" => "Durable and weather-resistant roofing options.", "link" => "display_roofing.php"],
             ["img" => "flooring.jpg", "title" => "Flooring", "description" => "A variety of flooring solutions including tiles, wood, and laminates.", "link" => "display_flooring.php"],
             ["img" => "plumbing_supplies.jpg", "title" => "Plumbing Supplies", "description" => "Pipes, fittings, and other essential plumbing items.", "link" => "display_plumbing.php"],
-            ["img" => "tools.jpg", "title" => "Tools and Hardware", "description" => "Everything from hand tools to power tools to get the job done.", "link" => "display_tools.php"]
+            ["img" => "new-tools.jpg", "title" => "Tools and Hardware", "description" => "Everything from hand tools to power tools to get the job done.", "link" => "display_tools.php"]
         ];
 
         foreach ($products as $product) {

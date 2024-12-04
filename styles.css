@@ -61,7 +61,7 @@ main {
     background-color: rgba(29, 30, 32, 0.69);
 }
 
-.collections, .hero {
+.collections {
     background-color: rgba(29, 30, 32, 0.84);
     color: white;
     padding: 20px 20px 20px 40px;
@@ -130,3 +130,12 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
+.product img {
+    width: 1080px;        /* Set your desired width */
+    height: 1080px;       /* Set your desired height */
+    object-fit: cover;   /* Ensure images maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
