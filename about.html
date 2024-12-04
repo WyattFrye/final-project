@@ -23,13 +23,22 @@
       max-width: 35%;
       height: auto;
     }
-    .header .title {
+    .header {
       font-size: 2em;
       color: white;
       background-color: rgb(57, 57, 57); /* Semi-transparent background */
       margin-top: 10px;
       padding: 10px;
       text-align: center;
+    }
+    .title {
+      font-size: 4em;
+      color: white;
+      background-color: transparent; /* Fully transparent background */
+      padding: 10px;
+      text-align: center;
+      z-index: 10;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
     }
 
     .hero {
@@ -88,15 +97,21 @@
 <body>
 <div class="header">
   <img src="BaW-logo.png" alt="Tomblin Hardware Logo">
-  <div class="title">
-    Who is Tomblin Hardware
-  </div>
 </div>
 <section class="hero">
   <h1>About Tomblin Hardware</h1>
   <a href="index1.php">Home</a>
 </section>
 <main>
+  <section class="title">
+    <div class="about-me">
+      <h1>About Us</h1>
+      </div>
+    </div>
+
+    Who is Tomblin Hardware
+  </section>
+
   <section class="about-me">
     <div class="about-me-content">
       <p>
