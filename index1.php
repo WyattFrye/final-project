@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once 'auth.php';
 
@@ -22,7 +21,6 @@ if (!is_logged_in()) {
         .hero {
             text-align: center;
             padding: 20px;
-
         }
         .hero a {
             margin: 0 10px;
@@ -63,9 +61,15 @@ if (!is_logged_in()) {
             height: auto;
             margin: 0 auto;
             display: block;
-
+        }
+        .center-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
     </style>
-
 </head>
 <body>
 <section class="hero">
@@ -97,7 +101,9 @@ if (!is_logged_in()) {
             </td>
         </tr>
     </table>
-    <body>
+</section>
+
+<section class="center-content">
     <div>
         <img src="redlogo.jpg" alt="Tomblin Hardware Products">
     </div>
@@ -112,9 +118,9 @@ if (!is_logged_in()) {
             <li><strong>Tools and Hardware</strong> – Everything from hand tools to power tools to get the job done.</li>
         </ul>
     </div>
-    </body>
+</section>
 
-    <div class="container">
+<div class="container">
     <img src="tools-wood.jpg" alt="Various Products" class="image">
     <div class="overlay-text">
         <h2>Our Commitment</h2>
