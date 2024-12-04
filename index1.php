@@ -54,16 +54,15 @@ if (!is_logged_in()) {
             transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Optional: to improve text readability */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
         }
         .content img {
-            width: 50%; /* Adjust width to scale down the image */
-            height: auto; /* Maintain aspect ratio */
-            margin: 0 auto; /* Center the image */
-            display: block; /* Center the image */
-        }
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
     </style>
 </head>
 <body>
@@ -78,7 +77,7 @@ if (!is_logged_in()) {
         <p style="flex: 1; color: #2b2d30;">
             Tomblin Hardware LLC is a locally owned hardware store located in Oceana, West Virginia. We offer a wide range of building materials, roofing supplies, flooring, plumbing supplies, and much more. We strive to provide quality products and services to meet the needs of our customers.
         </p>
-        <img src="storefront_sign.jpg" alt="Tomblin Hardware Store" class="image" height="75px" style="margin-left: 20px;">
+        <img src="storefront_sign.jpg" alt="Tomblin Hardware Store" height="300px" style="margin-left: 20px;">
     </div>
 </div>
 <section>
