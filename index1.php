@@ -38,7 +38,7 @@ if (!is_logged_in()) {
         }
         .container {
             position: relative;
-            width: 100%;
+            width: 98%;
         }
         .image {
             display: block;
@@ -63,7 +63,9 @@ if (!is_logged_in()) {
             height: auto;
             margin: 0 auto;
             display: block;
+
     </style>
+
 </head>
 <body>
 <section class="hero">
@@ -74,13 +76,14 @@ if (!is_logged_in()) {
 </section>
 <br>
 <div class="container box">
-    <div style="display: flex; align-items: center;">
+    <div style="display: flex; align-items: center; flex-wrap: wrap;">
         <p style="flex: 1; color: #2b2d30;">
             Tomblin Hardware LLC is a locally owned hardware store located in Oceana, West Virginia. We offer a wide range of building materials, roofing supplies, flooring, plumbing supplies, and much more. We strive to provide quality products and services to meet the needs of our customers.
         </p>
-        <img src="storefront_sign.jpg" alt="Tomblin Hardware Store" height="275px" style="margin-left: 20px;">
+        <img src="storefront_sign.jpg" alt="Tomblin Hardware Store" style="margin-left: 10px; margin-right: 10px; max-width: 95%; height: auto;">
     </div>
 </div>
+
 <section>
     <table>
         <tr>
@@ -94,18 +97,24 @@ if (!is_logged_in()) {
             </td>
         </tr>
     </table>
-    <img src="redlogo.jpg" alt="Tomblin Hardware Products" class="image">
-</section>
-<h2>Our Products</h2>
-<p>At Tomblin Hardware, we provide a diverse range of products to meet all your building and renovation needs:</p>
-<ul>
-    <li><strong>Building Materials</strong> – High-quality lumber, cement, and other construction materials.</li>
-    <li><strong>Roofing Supplies</strong> – Durable and weather-resistant roofing options.</li>
-    <li><strong>Flooring</strong> – A variety of flooring solutions including tiles, wood, and laminates.</li>
-    <li><strong>Plumbing Supplies</strong> – Pipes, fittings, and other essential plumbing items.</li>
-    <li><strong>Tools and Hardware</strong> – Everything from hand tools to power tools to get the job done.</li>
-</ul>
-<div class="container">
+    <body>
+    <div>
+        <img src="redlogo.jpg" alt="Tomblin Hardware Products">
+    </div>
+    <div>
+        <h2>Our Products</h2>
+        <p>At Tomblin Hardware, we provide a diverse range of products to meet all your building and renovation needs:</p>
+        <ul>
+            <li><strong>Building Materials</strong> – High-quality lumber, cement, and other construction materials.</li>
+            <li><strong>Roofing Supplies</strong> – Durable and weather-resistant roofing options.</li>
+            <li><strong>Flooring</strong> – A variety of flooring solutions including tiles, wood, and laminates.</li>
+            <li><strong>Plumbing Supplies</strong> – Pipes, fittings, and other essential plumbing items.</li>
+            <li><strong>Tools and Hardware</strong> – Everything from hand tools to power tools to get the job done.</li>
+        </ul>
+    </div>
+    </body>
+
+    <div class="container">
     <img src="tools-wood.jpg" alt="Various Products" class="image">
     <div class="overlay-text">
         <h2>Our Commitment</h2>
