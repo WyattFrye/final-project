@@ -12,10 +12,28 @@
       height: 200vh; /* Make the body taller to enable scrolling */
     }
 
+    .header {
+      text-align: center;
+      background-color: #ccc; /* Gray background color */
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .header img {
+      max-width: 100%;
+      height: auto;
+    }
+    .header .title {
+      font-size: 2em;
+      color: #333;
+      margin-top: 10px;
+    }
+
     .hero {
       text-align: center;
       padding: 20px;
       background-color: #333;
+      z-index: 9;
     }
     .hero a {
       margin: 0 10px;
@@ -40,6 +58,7 @@
       color: white;
       background: url('dark-workers.jpg') no-repeat center center;
       background-size: cover;
+      z-index: 1;
     }
 
     .about-me-content {
@@ -64,6 +83,12 @@
   </style>
 </head>
 <body>
+<div class="header">
+  <img src="BaW-logo.png" alt="Tomblin Hardware Logo">
+  <div class="title">
+    Who is Tomblin Hardware
+  </div>
+</div>
 <section class="hero">
   <h1>About Tomblin Hardware</h1>
   <a href="index1.php">Home</a>
