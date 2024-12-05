@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirm_password = $_POST['confirm_password'];
-        
+
         if ($password !== $confirm_password) {
             $error_message = 'Passwords do not match';
         } else if (strlen($password) < 6) {
@@ -35,6 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Register - Tomblin Hardware</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+<section class="hero">
+    <h1>Tomblin Hardware</h1>
+    <h4>11487 Appalachian Highway | Oceana, WV 24870 | (304) 682-4665</h4>
+</section>
 <body_2>
     <div class="auth-container">
         <h1>Register</h1>
@@ -44,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php if ($success_message): ?>
             <div class="success"><?php echo htmlspecialchars($success_message); ?></div>
         <?php endif; ?>
-        
+
         <form method="POST" action="" class="auth-form">
             <div>
                 <label for="username">Username:</label>
