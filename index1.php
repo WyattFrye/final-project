@@ -88,4 +88,7 @@ if (!is_logged_in()) {
     <img src="storefront_sign.jpg" alt="Customer Service" height="50px">
 </div>
 </body>
+<footer>
+    <p style="z-index: auto">© 2024 Tomblin Hardware</p>
+</footer>
 </html>
