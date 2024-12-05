@@ -239,11 +239,12 @@ ul {
     z-index: 1;
 }
 .about-me-content {
+    font-size: 14px;
     position: absolute;
     width: 100%;
     top: 100%;
     transition: top 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(57, 57, 57);
     padding: 20px;
     box-sizing: border-box;
 }
